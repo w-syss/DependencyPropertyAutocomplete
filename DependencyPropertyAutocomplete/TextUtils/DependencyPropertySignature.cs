@@ -65,10 +65,12 @@ namespace DependencyPropertyAutocomplete.TextUtils
         {
             if (selection == null)
             {
-                throw new ArgumentNullException(nameof(selection));
+                return false;
             }
 
-            return selection.EndsWith("Property", StringComparison.CurrentCulture);
+            var tokenCount = selection.Split(' ').Length;
+
+            return (tokenCount <= 3) && selection.EndsWith("Property", StringComparison.CurrentCulture);
         }
 
         public override string ToString()
