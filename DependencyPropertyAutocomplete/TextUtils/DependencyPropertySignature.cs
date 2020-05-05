@@ -68,7 +68,7 @@ namespace DependencyPropertyAutocomplete.TextUtils
                 throw new ArgumentNullException(nameof(selection));
             }
 
-            return selection.EndsWith("Property", System.StringComparison.CurrentCulture);
+            return selection.EndsWith("Property", StringComparison.CurrentCulture);
         }
 
         public override string ToString()
