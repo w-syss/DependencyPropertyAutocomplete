@@ -1,0 +1,2 @@
+# DependencyPropertyAutocomplete
+Generate boilerplate code for DependencyProperties
