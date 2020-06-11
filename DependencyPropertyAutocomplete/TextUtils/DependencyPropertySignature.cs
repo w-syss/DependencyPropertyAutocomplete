@@ -77,7 +77,7 @@ namespace DependencyPropertyAutocomplete.TextUtils
         {
             var stringBuilder = new StringBuilder();
             stringBuilder.AppendLine($"{property.AccessModifier} static readonly DependencyProperty {property.PropertyName}");
-            stringBuilder.Append($"\t= DependencyProperty.Register(nameof({property.Name}), typeof({property.Type}), typeof({enclosingClass}), new PropertyMetadata(default({property.Type})));");
+            stringBuilder.Append($"    = DependencyProperty.Register(nameof({property.Name}), typeof({property.Type}), typeof({enclosingClass}), new PropertyMetadata(default({property.Type})));");
             return stringBuilder.ToString();
         }
         #endregion
