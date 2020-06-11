@@ -12,8 +12,8 @@ namespace DependencyPropertyAutocompleteTests.TextUtils
             var stringBuilder = new StringBuilder();
             stringBuilder.AppendLine($"{accessModifier} {type} {name}");
             stringBuilder.AppendLine("{");
-            stringBuilder.AppendLine($"\tget => ({type})GetValue({propertyName});");
-            stringBuilder.AppendLine($"\tset => SetValue({propertyName}, value);");
+            stringBuilder.AppendLine($"    get => ({type})GetValue({propertyName});");
+            stringBuilder.AppendLine($"    set => SetValue({propertyName}, value);");
             stringBuilder.Append("}");
             return stringBuilder.ToString();
         }

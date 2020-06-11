@@ -10,7 +10,7 @@ namespace DependencyPropertyAutocompleteTests.TextUtils
         {
             var stringBuilder = new StringBuilder();
             stringBuilder.AppendLine($"{accessModifier} static readonly DependencyProperty {propertyName}");
-            stringBuilder.Append($"\t= DependencyProperty.Register(nameof({name}), typeof({type}), typeof({enclosingClass}), new PropertyMetadata(default({type})));");
+            stringBuilder.Append($"    = DependencyProperty.Register(nameof({name}), typeof({type}), typeof({enclosingClass}), new PropertyMetadata(default({type})));");
             return stringBuilder.ToString();
         }
 
