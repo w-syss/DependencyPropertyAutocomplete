@@ -63,10 +63,12 @@ namespace DependencyPropertyAutocomplete.TextUtils
 
         public override string ToString()
         {
+            var typeCast = (Type != "object") ? $"({Type})" : string.Empty;
+            
             var stringBuilder = new StringBuilder();
             stringBuilder.AppendLine($"{AccessModifier} {Type} {Name}");
             stringBuilder.AppendLine("{");
-            stringBuilder.AppendLine($"    get => ({Type})GetValue({PropertyName});");
+            stringBuilder.AppendLine($"    get => {typeCast}GetValue({PropertyName});");
             stringBuilder.AppendLine($"    set => SetValue({PropertyName}, value);");
             stringBuilder.Append("}");
             return stringBuilder.ToString();
