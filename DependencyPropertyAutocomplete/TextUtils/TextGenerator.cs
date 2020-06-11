@@ -41,7 +41,7 @@ namespace DependencyPropertyAutocomplete.TextUtils
         }
         private static string IndentCode(string input)
         {
-            return input.Replace("\n", "\n\t\t");
+            return input.Replace("\n", "\n        ");
         }
     }
 }
