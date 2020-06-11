@@ -18,6 +18,17 @@ namespace DependencyPropertyAutocompleteTests.TextUtils
             return stringBuilder.ToString();
         }
 
+        private string GenerateExpectedResultForObjectReturnType(string accessModifier, string type, string name, string propertyName)
+        {
+            var stringBuilder = new StringBuilder();
+            stringBuilder.AppendLine($"{accessModifier} {type} {name}");
+            stringBuilder.AppendLine("{");
+            stringBuilder.AppendLine($"    get => GetValue({propertyName});");
+            stringBuilder.AppendLine($"    set => SetValue({propertyName}, value);");
+            stringBuilder.Append("}");
+            return stringBuilder.ToString();
+        }
+
         [Fact]
         public void GivenOnlyNameProducesCorrectOutput()
         {
@@ -49,6 +60,18 @@ namespace DependencyPropertyAutocompleteTests.TextUtils
             var property = PropertySignature.FromRawSelection(rawSelection);
 
             var expected = GenerateExpectedResult("internal", "string", "TestName", "TestNameProperty");
+            var result = property.ToString();
+
+            Assert.Equal(expected, result);
+        }
+
+        [Fact]
+        public void ObjectReturnTypeProducesCorrectOutput()
+        {
+            var rawSelection = "public object TestNameProperty";
+            var property = PropertySignature.FromRawSelection(rawSelection);
+
+            var expected = GenerateExpectedResultForObjectReturnType("public", "object", "TestName", "TestNameProperty");
             var result = property.ToString();
 
             Assert.Equal(expected, result);
