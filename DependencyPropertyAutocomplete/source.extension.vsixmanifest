@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="DependencyPropertyAutocomplete.c70d4c67-533c-4e29-84b8-ef75041002bd" Version="1.0" Language="en-US" Publisher="Ole Wiedemann" />
+        <Identity Id="DependencyPropertyAutocomplete.c70d4c67-533c-4e29-84b8-ef75041002bd" Version="1.1" Language="en-US" Publisher="Ole Wiedemann" />
         <DisplayName>DependencyPropertyAutocomplete</DisplayName>
         <Description xml:space="preserve">Generate boilerplate code for DependencyProperties.</Description>
         <License>Resources\License.txt</License>
